@@ -12,6 +12,11 @@ var Task = Elixir.Task;
 Elixir.extend('phplint', function(src, options) {
     src = src || [
         'app/**/*.php',
+        'bootstrap/*.php',
+        'config/*.php',
+        'database/**/*.php',
+        'public/*.php',
+        'resources/**/*.php',
         'test/**/*.php'
     ];
 
