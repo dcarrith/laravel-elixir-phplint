@@ -23,7 +23,7 @@ elixir.extend('phplint', function(src, options) {
         })(err);
     };
     
-    gulp.task("phplint", function() {
+    new Task('phplint', function() {
         phplint.lint(src, options, function(err) {
             if (err) {
                 onError(err);
@@ -36,7 +36,6 @@ elixir.extend('phplint', function(src, options) {
                 });
             }
         });
-    });
-
-    return this.queueTask("phplint");
+    })
+    .watch('./app/**');
 });
