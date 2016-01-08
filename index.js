@@ -22,8 +22,8 @@ elixir.extend('phplint', function(src, options) {
             icon: path.join(__dirname, '../laravel-elixir/icons/fail.png')
         })(err);
     };
-
-    gulp.task('phplint', function() {
+    
+    new Task('phplint', function() {
         phplint.lint(src, options, function(err) {
             if (err) {
                 onError(err);
@@ -36,9 +36,6 @@ elixir.extend('phplint', function(src, options) {
                 });
             }
         });
-    });
-
-    this.registerWatcher('phplint', src);
-
-    return this.queueTask('phplint');
+    })
+    .watch('./app/**');
 });
