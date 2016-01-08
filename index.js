@@ -9,7 +9,7 @@ var Elixir = require('laravel-elixir');
 
 var Task = Elixir.Task;
 
-elixir.extend('phplint', function(src, options) {
+Elixir.extend('phplint', function(src, options) {
     src = src || [
         'app/**/*.php',
         'test/**/*.php'
