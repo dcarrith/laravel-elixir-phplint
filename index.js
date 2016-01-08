@@ -1,10 +1,13 @@
 'use strict';
 
 var gulp = require('gulp');
+var shell = require('gulp-shell');
 var phplint = require('phplint');
 var notify = require('gulp-notify');
-var elixir = require('laravel-elixir');
 var path = require('path');
+var Elixir = require('laravel-elixir');
+
+var Task = Elixir.Task;
 
 elixir.extend('phplint', function(src, options) {
     src = src || [
